@@ -1,0 +1,32 @@
+/* 0. Reset ================================= */
+@import 'reset';
+
+/* 1. Main Layout ================================= */
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background: #8395f1;
+}
+
+/* 2. Content ================================= */
+
+.content{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	p{
+		font-size: 3vw;
+		font-family: Baskerville, serif;
+	}
+
+	h1{
+		font-size: 20vw;
+		font-family: Baskerville, serif;
+		font-style: italic;
+	}
+}
