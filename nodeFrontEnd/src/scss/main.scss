@@ -8,16 +8,20 @@
 }
 
 body {
-	background: #8395f1;
+	background: url(../img/bg.jpg) no-repeat, center;
+	background-size: cover;
+	width: 100%;
+	height: 100%;
 }
 
 /* 2. Content ================================= */
 
 .content{
 	position: absolute;
-	top: 50%;
+	top: 30%;
 	left: 50%;
 	transform: translate(-50%, -50%);
+	transition: .5s;
 
 	p{
 		font-size: 3vw;
@@ -25,8 +29,39 @@ body {
 	}
 
 	h1{
-		font-size: 20vw;
+		font-size: 14vw;
 		font-family: Baskerville, serif;
 		font-style: italic;
 	}
 }
+
+@media screen and (min-width: 550px){
+	.content{
+		top: 50%; 
+	}	
+}
+
+@media screen and (min-width: 800px){
+	.content{
+		top: 60%; 
+	}	
+}
+
+@media screen and (min-width: 1000px){
+	.content{
+		top: 80%; 
+	}	
+}
+
+@media screen and (min-width: 1200px){
+	.content{
+		top: 100%; 
+	}	
+}
+
+
+
+
+
+
+
