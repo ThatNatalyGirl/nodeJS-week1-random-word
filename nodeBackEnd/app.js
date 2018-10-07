@@ -1,4 +1,4 @@
-//to pull this up on the terminal we need to cd into the file and then and then type in node then the file. In this case is node app.js
+//to pull this up on the terminal we need to cd into the file and then type in node then the file. In this case is node app.js
 //we can use es6 with the language bc it's our comptuer and no loser is going to come on and use an older version
 //NOTE: use the up arrow to go through the last thing you ran
 
@@ -15,13 +15,13 @@ console.log(__dirname)//this does the parent/directory so in the case of this fi
 
 //https://nodejs.org/dist/latest-v8.x/docs/api/fs.html	----these are the things that we can use
 
-let fs = require('fs') //require is saying go get me something. The name of that thing is fs which is the file system and when we get it we assign it to a variable of fs
+let fs = require('fs') //require is saying go get me something(module). The name of that thing is fs which is the file system and when we get it we assign it to a variable of fs
 
 //for some reason node people just don't like to use ;
 let colors = require('colors')
 
 //http module
-let http = require('http')
+let http = require('http') //handling network traffic
 
 let nauticalWordsArr = [
 	'ahoy',
@@ -71,14 +71,15 @@ fs.readFile(__dirname + '/message.txt', {encoding: 'utf-8'}, (err, data) => {
 
 //takes in one function with parameters
 //this is us talking to a server
-http.createServer(function (req, res) {
+http.createServer(function (req, res) { //request(time stamps and url and data etc) and response(how we can send stuff back like methods)
 	//you can change the port like in circuslabs:3000 you can change the number at the end of it. But if we tell it to be on a port you have to make a new port. You can't use one that is in use. Pick a random number in the higher numbers like 1000+
 	console.log('got a request port on 1234!!!'.blue)
 
-	res.setHeader('Access-Control-Allow-Origin', '*')
+	res.setHeader('Access-Control-Allow-Origin', '*') //this allows the api to be able to be accessed. By default it only accepts traffic from the same domain
 
 	// console.log(req) - this is a large object with information that anyone could want to request. It's a network traffic of request going through modems and networks
 	res.writeHead(200, {'content-type': 'text/html'})//give it a status code like 404. 200 is a good request. the content-type bit is making it into a real html file
+	//You can do text/plain to make it webtalk
 
 	//you can pull an item out of an array and then call it in the .listen as calling a function
 	//you can put something in a variable and then call the variable in the .listen as long as it's a string
